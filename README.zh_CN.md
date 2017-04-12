@@ -26,6 +26,10 @@ Description here.
 
 ## 依赖说明
 
+- egg-redis
+
+- egg-session-redis
+
 ### 依赖的 egg 版本
 
 egg-weapp-sdk 版本 | egg 1.x
@@ -47,18 +51,35 @@ egg-weapp-sdk 版本 | egg 1.x
 
 ```js
 // config/plugin.js
+exports.redis = {
+  enable: true,
+  package: 'egg-redis',
+};
+
+exports.sessionRedis = {
+  enable: true,
+  package: 'egg-session-redis',
+};
+
 exports.weappSDK = {
   enable: true,
   package: 'egg-weapp-sdk',
 };
+
 ```
 
 
 ## 使用场景
 
-- Why and What: 独立管理微信小程序用户会话，校验身份。
+- Why and What: 独立管理微信小程序用户会话，校验身份。利用redis储存会话。
 
 - How: 具体的示例代码:
+
+含两种方法:
+
+1. 登陆:  loginService.login()
+
+2. 校验用户:  loginService.check()
 
 ```js
 // app/controller/weapp.js
@@ -97,10 +118,31 @@ module.exports = app => {
 请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。
 ```js
 // {app_root}/config/config.default.js
-exports.weappSDK = {
-  appId: '',
-  appSecret: ''
+
+module.exports = appInfo => {
+  const config = {};
+
+  config.redis = {
+    client: {
+      host: '127.0.0.1',
+      port: '6379',
+      password: '',
+      db: '0',
+    },
+  };
+
+  config.sessionRedis = {
+    name: '', // single redis does not need to config name
+  };
+
+  config.weappSDK = {
+    appId: 'wx8ce5cc812ef169a9',
+    appSecret: '352a0d3e58f4549cceb7e5b8f5a17847',
+  };
+
+  return config;
 };
+
 ```
 
 ## 单元测试

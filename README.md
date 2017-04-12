@@ -20,9 +20,11 @@
 [download-image]: https://img.shields.io/npm/dm/egg-weapp-sdk.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-weapp-sdk
 
-<!--
-Description here.
--->
+## Dependencies
+
+- egg-redis
+
+- egg-session-redis
 
 ## Install
 
@@ -34,6 +36,16 @@ $ npm i egg-weapp-sdk --save
 
 ```js
 // {app_root}/config/plugin.js
+exports.redis = {
+  enable: true,
+  package: 'egg-redis',
+};
+
+exports.sessionRedis = {
+  enable: true,
+  package: 'egg-session-redis',
+};
+
 exports.weappSDK = {
   enable: true,
   package: 'egg-weapp-sdk',
@@ -44,15 +56,41 @@ exports.weappSDK = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.weappSDK = {
-  appId: '',
-  appSecret: ''
+
+module.exports = appInfo => {
+  const config = {};
+
+  config.redis = {
+    client: {
+      host: '127.0.0.1',
+      port: '6379',
+      password: '',
+      db: '0',
+    },
+  };
+
+  config.sessionRedis = {
+    name: '', // single redis does not need to config name
+  };
+
+  config.weappSDK = {
+    appId: 'wx8ce5cc812ef169a9',
+    appSecret: '352a0d3e58f4549cceb7e5b8f5a17847',
+  };
+
+  return config;
 };
 ```
 
-- Why and What: Manage weapp user session independently.
+- Why and What: Manage weapp user session independently, use Redis to store session.
 
 see [config/config.default.js](config/config.default.js) for more detail.
+
+- Two methods:
+
+1. Login:  loginService.login()
+
+2. Check:  loginService.check()
 
 ## Example
 
