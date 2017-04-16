@@ -1,6 +1,6 @@
 {
   "name": "egg-weapp-sdk",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "egg的微信小程序会话管理SDK",
   "eggPlugin": {
     "name": "weappSDK",
