@@ -8,7 +8,7 @@ module.exports = app => {
   weapp.config({
     AppId: config.appId,
     AppSecret: config.appSecret,
-    Redis: app.sessionStore,
+    Redis: app.redis,
   });
 
   app.weapp = weapp;

@@ -24,8 +24,6 @@
 
 - egg-redis
 
-- egg-session-redis
-
 ## Install
 
 ```bash
@@ -39,11 +37,6 @@ $ npm i egg-weapp-sdk --save
 exports.redis = {
   enable: true,
   package: 'egg-redis',
-};
-
-exports.sessionRedis = {
-  enable: true,
-  package: 'egg-session-redis',
 };
 
 exports.weappSDK = {
@@ -69,13 +62,10 @@ module.exports = appInfo => {
     },
   };
 
-  config.sessionRedis = {
-    name: '', // single redis does not need to config name
-  };
-
+  // replace your appId and appSecret of WEAPP
   config.weappSDK = {
-    appId: 'wx8ce5cc812ef169a9',
-    appSecret: '352a0d3e58f4549cceb7e5b8f5a17847',
+    appId: 'xxxxxxxxxxx',
+    appSecret: 'xxxxxxxxxxxxxxxxxx',
   };
 
   return config;

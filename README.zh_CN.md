@@ -28,8 +28,6 @@ Description here.
 
 - egg-redis
 
-- egg-session-redis
-
 ### 依赖的 egg 版本
 
 egg-weapp-sdk 版本 | egg 1.x
@@ -54,11 +52,6 @@ egg-weapp-sdk 版本 | egg 1.x
 exports.redis = {
   enable: true,
   package: 'egg-redis',
-};
-
-exports.sessionRedis = {
-  enable: true,
-  package: 'egg-session-redis',
 };
 
 exports.weappSDK = {
@@ -131,13 +124,10 @@ module.exports = appInfo => {
     },
   };
 
-  config.sessionRedis = {
-    name: '', // single redis does not need to config name
-  };
-
+  // 请替换你微信小程序的appId appSecret
   config.weappSDK = {
-    appId: 'wx8ce5cc812ef169a9',
-    appSecret: '352a0d3e58f4549cceb7e5b8f5a17847',
+    appId: 'xxxxxxxxxxxxxxxx',
+    appSecret: 'xxxxxxxxxxxxxxxxxx',
   };
 
   return config;
