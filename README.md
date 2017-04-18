@@ -20,6 +20,8 @@
 [download-image]: https://img.shields.io/npm/dm/egg-weapp-sdk.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-weapp-sdk
 
+可移步[中文文档](README.zh_CN.md)
+
 ## Dependencies
 
 - egg-redis
