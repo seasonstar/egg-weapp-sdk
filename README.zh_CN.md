@@ -28,6 +28,20 @@ Description here.
 
 - egg-redis
 
+- [qcloud-weapp-client-sdk](https://github.com/tencentyun/weapp-client-sdk)
+
+微信小程序客户端，需配合qcloud-weapp-client-sdk使用
+
+## Demo
+
+> [egg-24time](https://github.com/seasonstar/egg-24time)
+
+社区后端使用Egg，Mysql，Redis，基于Nodejs开发，全套代码使用ES6编写
+
+> [weapp-24time](https://github.com/seasonstar/weapp-24time)
+
+微信小程序端
+
 ### 依赖的 egg 版本
 
 egg-weapp-sdk 版本 | egg 1.x
@@ -35,15 +49,6 @@ egg-weapp-sdk 版本 | egg 1.x
 1.x | 😁
 0.x | ❌
 
-### 依赖的插件
-<!--
-
-如果有依赖其它插件，请在这里特别说明。如
-
-- security
-- multipart
-
--->
 
 ## 开启插件
 

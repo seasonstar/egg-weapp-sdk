@@ -26,6 +26,21 @@
 
 - egg-redis
 
+- [qcloud-weapp-client-sdk](https://github.com/tencentyun/weapp-client-sdk)
+
+微信小程序客户端，需配合qcloud-weapp-client-sdk使用
+
+## Demo
+
+> [egg-24time](https://github.com/seasonstar/egg-24time)
+
+社区后端使用Egg，Mysql，Redis，基于Nodejs开发，全套代码使用ES6编写
+
+> [weapp-24time](https://github.com/seasonstar/weapp-24time)
+
+微信小程序端
+
+
 ## Install
 
 ```bash
@@ -119,6 +134,11 @@ module.exports = app => {
   return WeappController;
 };
 ```
+
+## Credits && Inspiration
+
+[腾讯云微信小程序客户端 SDK](https://github.com/tencentyun/weapp-client-sdk)
+
 
 ## Questions & Suggestions
 
