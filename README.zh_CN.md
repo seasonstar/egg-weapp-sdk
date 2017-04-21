@@ -30,7 +30,7 @@ Description here.
 
 - [qcloud-weapp-client-sdk](https://github.com/tencentyun/weapp-client-sdk)
 
-微信小程序客户端，需配合qcloud-weapp-client-sdk使用
+for 微信小程序客户端，Egg-weapp-sdk需配合qcloud-weapp-client-sdk使用
 
 ## Demo
 
