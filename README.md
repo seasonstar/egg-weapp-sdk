@@ -26,7 +26,7 @@
 
 - egg-redis
 
-- [qcloud-weapp-client-sdk](https://github.com/tencentyun/weapp-client-sdk)
+- [qcloud-weapp-client-sdk](https://github.com/tencentyun/weapp-client-sdk) for Weapp Client
 
  Egg-weapp-sdk should be interacted with qcloud-weapp-client-sdk in Weapp Client
 
