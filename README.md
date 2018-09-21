@@ -83,6 +83,7 @@ module.exports = appInfo => {
   config.weappSDK = {
     appId: 'xxxxxxxxxxx',
     appSecret: 'xxxxxxxxxxxxxxxxxx',
+    redisDbName: 'session', // If your Configure with multi redis clients,
   };
 
   return config;
